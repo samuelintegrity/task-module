@@ -1,0 +1,6 @@
+export { default as CreateTask } from "./CreateTask"
+export { default as Header } from "./Header"
+export { default as InfoTask } from "./InfoTask"
+export { default as SearchTask } from "./SearchTask"
+export { default as TaskTable } from "./TaskTable"
+export { default as TaskItem } from "../pages/task-item"

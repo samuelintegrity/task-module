@@ -1,15 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { EventBus } from "./eventBus";
+import { appRoutes } from "./routes";
+
+const router = createBrowserRouter(Object.values(appRoutes));
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("task-module-app") as HTMLElement
 );
+
+declare global {
+  interface Window { eventBus: EventBus; }
+}
+
+window.eventBus = new EventBus();
+
 root.render(
   <React.StrictMode>
-    <App />
+      <RouterProvider router={router} />
   </React.StrictMode>
 );
 
