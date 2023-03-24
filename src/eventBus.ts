@@ -9,7 +9,7 @@ export class EventBus {
 
   // TODO: set event  type
   receiveMessage = (event: any) => {
-    console.log("script: Task module message receive, ", event.origin, event.source)
+    console.log("script: Task module message receive: ", event.data)
     if (event.origin === window.location.origin) return;
     this.baseApp = event.source;
     this.baseAppURL = event.origin;
